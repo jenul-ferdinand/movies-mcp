@@ -1,12 +1,12 @@
 import OAuthProvider from "@cloudflare/workers-oauth-provider";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { McpAgent } from "agents/mcp";
-import { Props } from "./types";
+import { ExtendedEnv, Props } from "./types";
 import { GitHubHandler } from "./auth/github-handler";
 import { closeDb } from "./database/connection";
 import { registerAllTools } from "./tools/register-tools";
 
-export class MyMCP extends McpAgent<Env, Record<string, never>, Props> {
+export class MyMCP extends McpAgent<ExtendedEnv, Record<string, never>, Props> {
 	server = new McpServer({
 		name: "PostgreSQL Database MCP Server",
 		version: "1.0.0",

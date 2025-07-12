@@ -10,7 +10,10 @@ export type Props = {
 };
 
 // Extended environment with OAuth provider
-export type ExtendedEnv = Env & { OAUTH_PROVIDER: OAuthHelpers };
+export type ExtendedEnv = Env & { 
+  OAUTH_PROVIDER: OAuthHelpers;
+  TMDB_API_KEY: string
+};
 
 // OAuth URL construction parameters
 export interface UpstreamAuthorizeParams {
